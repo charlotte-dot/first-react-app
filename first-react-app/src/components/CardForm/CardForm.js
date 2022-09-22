@@ -1,6 +1,5 @@
-
 import styles from './CardForm.module.scss';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Button from './../Button/Button';
 import TextInput from './../TextInput/TextInput';
 import { useDispatch } from 'react-redux';
@@ -10,9 +9,13 @@ const CardForm = props => {
     const [title, setTitle] = useState('');
     const dispatch = useDispatch();
 
+    useEffect(() => {
+        console.log('Test');
+    }, [])
+
     const handleSubmit = e => {
         e.preventDefault();
-        dispatch({ type: 'ADD_CARD', newCard: { title, columnId } });
+        dispatch(addColumn({title:title, columnId: props.columnId } ));
         setTitle('');
     };
 
@@ -25,4 +28,3 @@ const CardForm = props => {
 };
 
 export default CardForm;
-

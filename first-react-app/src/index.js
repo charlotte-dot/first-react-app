@@ -5,7 +5,7 @@ import store from './redux/store'
 import App from './App';
 import './styles/normalize.scss';
 import './styles/global.scss';
-import '@fortawesome/fontawesome-free/css/fontawesome.min.css';
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
 ReactDOM.render(
   <React.StrictMode>
