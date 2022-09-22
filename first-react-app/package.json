@@ -10,6 +10,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.2",
+    "react-router-dom": "^6.4.1",
     "react-scripts": "5.0.1",
     "redux": "^4.2.0",
     "redux-devtools-extension": "^2.13.9",
@@ -21,7 +22,11 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "watch": "npm-run-all build build-dev -p watch:* server",
+    "watch:browsersync": "browser-sync start --server dist --files \"dist/**/*\" --ignore \"dist/db/**/*\"",
+    "watch:sassprefixer": "onchange \"src/sass/**/*.scss\" -- npm run build-dev",
+    "watch:copy": "onchange -e \"**/sass/**/*\" -e \"**/.gitkeep\" \"src/**/*\" -- copyfiles -a -u 1 {{changed}} dist"
   },
   "eslintConfig": {
     "extends": [
