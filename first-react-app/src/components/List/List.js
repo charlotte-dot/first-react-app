@@ -1,6 +1,7 @@
 import styles from "./List.module.scss";
 import Column from "./../Column/Column";
 import ColumnForm from "./../ColumnForm/ColumnForm";
+import SearchForm from "./../SearchForm/SearchForm";
 import { useSelector } from "react-redux";
 import { getColumnsByList, getListById } from '../../redux/store';
 import { useParams } from 'react-router';
@@ -26,6 +27,7 @@ const List = () => {
         ))}
       </section>
       <ColumnForm listId={listId} />
+      <SearchForm />
     </div>
   );
 };
