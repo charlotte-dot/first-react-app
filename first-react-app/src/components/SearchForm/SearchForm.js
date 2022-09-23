@@ -13,7 +13,7 @@ const SearchForm = () => {
 
     const handleSubmit = e => {
         e.preventDefault();
-        dispatch(updateSearchString({ searchString }));
+        dispatch(updateSearchString(searchString));
         setSearchString('');
      };
 
@@ -21,7 +21,6 @@ const SearchForm = () => {
     return (
         <form onSubmit={handleSubmit} className={styles.searchForm}>
             <TextInput placeholder="Search..." value={searchString} onChange={e => setSearchString(e.target.value)}/>
-            <TextInput placeholder="Add new column" />
             <Button>
                 <span className="fa fa-search" />
             </Button>

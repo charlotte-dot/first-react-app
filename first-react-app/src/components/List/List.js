@@ -9,7 +9,8 @@ const List = () => {
 
   const { listId } = useParams();
   const columns = useSelector((state) => getColumnsByList(state, listId));
-  const listData = useSelector((state) => getListById(state, state.listId));
+  const listData = useSelector((state) => getListById(state, listId));
+
 
   return (
     <div className={styles.list}>
@@ -24,7 +25,7 @@ const List = () => {
             {...column} />
         ))}
       </section>
-      <ColumnForm/>
+      <ColumnForm listId={listId} />
     </div>
   );
 };
